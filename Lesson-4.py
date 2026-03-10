@@ -11,8 +11,7 @@
 #     print("Invalid age entered.")
 # else:
 #     print("You are not eligible to apply for university.")
-    
-   
+       
 # online=False
 
 # if online:
@@ -33,8 +32,8 @@ if operator=="-":
 if operator=="*":
     print(f"The result of {num1} * {num2} is: {(num1*num2)}")
     
-if operator=="+":
+if operator=="/":
     print(f"The result of {num1} / {num2} is: {(num1/num2)}")
     
-if operator=="+":
+if operator=="**":
     print(f"The result of {num1} ** {num2} is: {(num1**num2)}")

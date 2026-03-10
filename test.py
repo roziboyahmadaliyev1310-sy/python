@@ -1,5 +1,5 @@
 class Students:
-    def __init(self, name, age, semester, student_ID):
+    def __init__(self, name, age, semester, student_ID):
         self.name=name
         self.age=age
         self.semester=semester
@@ -7,7 +7,7 @@ class Students:
         self.students=[]
     
     def add_students(self, name, age, semester, student_ID):
-        self.students.append(self.students(name, age, semester, student_ID))
+        self.students.append(Students(name, age, semester, student_ID))
 
 
 while True:
