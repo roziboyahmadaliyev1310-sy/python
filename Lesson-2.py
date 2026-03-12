@@ -45,7 +45,6 @@ import math
 
 x=9
 
-# sqrt() function => returns the square root of a number
 print(math.sqrt(x))
 
 # ceil() function => returns the smallest integer greater than or equal to a number
@@ -53,3 +52,4 @@ print(math.ceil(3.2))
 
 # floor() function => returns the largest integer less than or equal to a number
 print(math.floor(3.99))
+

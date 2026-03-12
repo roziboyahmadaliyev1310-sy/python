@@ -17,11 +17,10 @@ is_adult=True
 # else:
 #     print("poper using")
 
-
 if age<0 and not is_adult:
     print("poper using") 
        
 else:
     print(f"{age} is not proper!")
     
-    
+   
