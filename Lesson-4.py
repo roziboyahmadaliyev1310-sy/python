@@ -1,5 +1,5 @@
-# if stetment => do some thing if condition is true
-                # else statement => do some thing if condition is false
+# if stetment => do something if condition is true
+                # else statement => do something if condition is false
                 
                 
 # univer_age=int(input("Enter your age: "))
