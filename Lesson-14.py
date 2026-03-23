@@ -66,7 +66,28 @@
 # fruits.clear()
 # print(fruits)
 
-fruits=('apple','coconut','orange','banana','coconut')
+# fruits=('apple','coconut','orange','banana','coconut')
 
-print(fruits.index('apple'))
-print(fruits.count('coconut'))
+# print(fruits.index('apple'))
+# print(fruits.count('coconut'))
+
+
+
+def get_items(tuple):
+    numbers=()
+    words=()
+    
+    for x in tuple:
+        numbers+=(x[0],)
+        if x[1] not in words:
+            words+=(x[1],)
+            
+    minimum=min(numbers)
+    maximum=max(numbers)
+    lenght=len(words)
+    return minimum,maximum,lenght
+
+
+test=((1,'a'),(2,'b'),(3,'c'))
+(a,b,c)=get_items(test)
+print(a,b,c)
