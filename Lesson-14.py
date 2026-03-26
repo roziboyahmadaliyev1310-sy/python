@@ -91,3 +91,17 @@ def get_items(tuple):
 test=((1,'a'),(2,'b'),(3,'c'))
 (a,b,c)=get_items(test)
 print(a,b,c)
+
+
+
+
+def duplication(x,y):
+    copy=x[:]
+    for i in copy:
+        if i in y:
+           x.remove(i)
+    return x,y
+            
+list=duplication([1,2,3,4,5],[1,2,3,6,7])
+print(list)
+
