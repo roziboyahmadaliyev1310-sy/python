@@ -105,3 +105,15 @@ def duplication(x,y):
 list=duplication([1,2,3,4,5],[1,2,3,6,7])
 print(list)
 
+
+
+
+
+class name:
+    def words_list(some):
+        print(some)
+    
+class age:   
+    def word():
+        temp=name()
+    
