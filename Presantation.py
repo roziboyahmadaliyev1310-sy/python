@@ -24,7 +24,7 @@ print("="*50)
 print("\nAvailable Products:")
 for product, price in products.items():
     print(f"  - {product.capitalize()}: ${price:.2f}")
-print("\nEnter product name and quantity (e.g., 'apple 3')")
+print("\n👉🏻Enter product name and quantity (e.g., 'apple 3')👈🏻")
 print("Type 'done' when finished shopping\n")
 print("="*50)
 print("Note: If your total exceeds $20, you will receive a 10% discount!")
@@ -59,7 +59,7 @@ class shopping_cart:
             
                 if product_name in self.products:
                     if product_name in self.cart:
-                        self.cart[product_name] += quantity
+                        self.cart[product_name]=self.cart.get[product_name,0] + quantity
                     else:
                         self.cart[product_name] = quantity
                     print(f" Added {quantity} {product_name}(s) to cart")
