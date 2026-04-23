@@ -56,7 +56,7 @@ while True:
                 cart[product_name] += quantity
             else:
                 cart[product_name] = quantity
-            print(f"✓ Added {quantity} {product_name}(s) to cart")
+            print(f" Added {quantity} {product_name}(s) to cart")
         else:
             print(f" Invalid product name: '{product_name}'. Please try again.")
     
@@ -65,7 +65,7 @@ while True:
 
 # FIX 4: This code should be OUTSIDE the while loop (indentation fixed)
 print("\n" + "="*50)
-print("              INVOICE")
+print(f"{'INVOICE':^50}")
 print("="*50)
 
 total_bill = 0
