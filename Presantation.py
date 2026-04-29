@@ -18,17 +18,18 @@ products = {
 }
 
 
-print("="*50)
-print("     WELCOME TO THE SHOPPING CART SYSTEM")
-print("="*50)
-print("\nAvailable Products:")
-for product, price in products.items():
-    print(f"  - {product.capitalize()}: ${price:.2f}")
-print("\n👉🏻Enter product name and quantity (e.g., 'apple 3')👈🏻")
+
+print("WELCOME TO THE SHOPPING CART SYSTEM")
+def display_products(products):
+    print("\nAvailable Products:")
+    for product, price in products.items():
+        print(f"  - {product.capitalize()}: ${price}")
+        
+print("\nEnter product name and quantity")
 print("Type 'done' when finished shopping\n")
-print("="*50)
+
 print("Note: If your total exceeds $20, you will receive a 10% discount!")
-print("="*50)
+
 
 
 class shopping_cart:
@@ -38,72 +39,68 @@ class shopping_cart:
         self.cart={}
         
     def add_to_cart(self):
+        display_products(self.products)
         while True:
-            user_input = input("Enter product name and quantity: ").strip()
+            user_input = input("Enter product name or 'done' to finish shopping: ").strip()
         
-            if user_input.lower() == "done":
+            if user_input.lower()=="done":
                 break
+            elif user_input.lower() not in self.products:
+                print(f" Invalid product name: '{user_input}'. Please try again.")
+                continue
+            
+            quantity_1 = input("Enter quantity: ").strip()
         
             try:
-            # FIX 1: Split input into product name and quantity
-                product_name, quantity = user_input.split()
-                quantity = int(quantity)
+                quantity = int(quantity_1)
+                product_name = user_input.lower()
             
-            # FIX 2: Convert product name to lowercase for comparison
-                product_name = product_name.lower()
-            
-            # FIX 3: Validate quantity is positive
                 if quantity <= 0:
                     print("Quantity must be greater than 0.")
                     continue
             
                 if product_name in self.products:
                     if product_name in self.cart:
-                        self.cart[product_name]=self.cart.get[product_name,0] + quantity
+                        self.cart[product_name] += quantity
                     else:
                         self.cart[product_name] = quantity
                     print(f" Added {quantity} {product_name}(s) to cart")
+                    print("if you want to add more products, please enter the product name or type 'done' to finish shopping.")
+                    display_products(self.products)
+                    
                 else:
                     print(f" Invalid product name: '{product_name}'. Please try again.")
         
             except ValueError:
             
-                print(" Invalid input format. Please enter: product_name quantity (e.g., 'apple 3')")
+                print(" Invalid input format. Please enter: product_name quantity")
         
     def generating_invoice(self):
-        # FIX 4: This code should be OUTSIDE the while loop (indentation fixed)
-        print("\n" + "="*50)
-        print(f"{'INVOICE':^50}")
-        print("="*50)
+        print("\n" + "*"*60)
+        print(f"{'INVOICE':^40}")
 
         total_bill = 0
-
-        # Check if cart is empty
-        if not cart.cart:
+       
+        if not self.cart:
             print("Your cart is empty. No purchase made.")
         else:
-            print(f"{'Product':<15} {'Qty':<5} {'Price':<10} {'Total':<10}")
-            print("-"*50)
+            print(f"{'Product':<15} {'Qty':<10} {'Price':<10} {'Total':<10}")
             
-            for product, quantity in cart.cart.items():
-                price = products[product]
+            for product, quantity in self.cart.items():
+                price = self.products[product]
                 product_total = price * quantity
                 total_bill += product_total
-                print(f"{product.capitalize():<15} {quantity:<5} ${price:<9.2f} ${product_total:.2f}")
+                print(f"{product.capitalize():<15} {quantity:<10} ${price:<9} ${product_total:<9}")
             
-            print("-"*50)
-            print(f"Subtotal: ${total_bill:.2f}")
+            print(f"Subtotal: ${total_bill}")
             
-            # FIX 5: Apply discount logic
+            
             if total_bill > 20:
                 discount = total_bill * 0.1
                 total_bill -= discount
-                print(f"Discount (10%): -${discount:.2f}")
+                print(f"Discount (10%): -${discount}")
             
-            print("="*50)
-            print(f"FINAL BILL: ${total_bill:.2f}")
-            print("="*50)
-            print("\n Thank you for shopping with us!\n")
+            print(f"FINAL BILL: ${total_bill}")
 
     
 cart = shopping_cart(products)
